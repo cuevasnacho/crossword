@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 80%;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -12,8 +12,59 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aqua;
+}
+
+.tableContainer {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    max-width: 300px;
+}
+
+.crossword {
+    background-color: red;
+}
+
+.syllables {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    background-color: blue;
+}
+
+.definitions {
+    background-color: red;
+    width: 30%;
+    min-width: 300px;
+    padding: 0;
+}
+
+.wordDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 3px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    padding: 3px;
+    background-color: white;
+    border: #888 solid 1px;
+}
+
 h1 {
     color: #333;
 }
 
-/* Add more styles as needed */
+h2 {
+    color: #333;
+}

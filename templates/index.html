@@ -8,12 +8,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Single Page App</h1>
-        <div id="content">
-            <!-- Content dynamically loaded here -->
+        <h1>Nachingrilla</h1>
+        <div class="content">
+            <div class="tableContainer">
+                <h2>Tablero</h2>
+                <div id="crossword" class="crossword"></div>
+            </div>
+            <div class="tableContainer">
+                <h2>Silabas</h2>
+                <div id="syllables" class="syllables"></div>
+            </div>
+            <div class="tableContainer">
+                <h2>Definiciones</h2>
+                <div id="definitions" class="definitions"></div>
+            </div>
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
