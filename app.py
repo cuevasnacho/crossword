@@ -18,5 +18,13 @@ def get_data():
     }
     return jsonify(data)
 
+@app.route('/api/<id>/<word_number>/<word>', methods=['GET'])
+def is_correct_answer(id, word_number, word):
+    data = {
+        "word_number": 1,
+        "is_correct": True
+    }
+    return data
+
 if __name__ == '__main__':
     app.run(debug=True)
