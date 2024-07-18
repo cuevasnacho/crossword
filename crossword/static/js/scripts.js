@@ -81,5 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.toggle('markedCell');
             });
         });})
+
+    fetch('/api/random_words')
+    .then(response => response.json())
+    .then(data => console.log(data))
 });
     

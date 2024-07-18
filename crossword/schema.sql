@@ -1,0 +1,5 @@
+CREATE TABLE dictionary (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    word TEXT NOT NULL,
+    definition TEXT NOT NULL
+);
