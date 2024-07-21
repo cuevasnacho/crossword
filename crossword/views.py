@@ -1,6 +1,7 @@
 from flask import render_template, jsonify
 from crossword import app
 from crossword.database import get_random_words
+from crossword.utils import get_words_number, get_syllables
 
 
 @app.route("/")
@@ -9,11 +10,14 @@ def index():
 
 @app.route("/api/get_game")
 def get_data():
-    words = [4, 5, 7, 5, 8, 4, 6]
-    syllables = 10*["ab"]
-    definitions = len(words)*["def"]
+    n = get_words_number(n=1, var=1)    # raise when more words are added
+    words = get_random_words(n)
+    syllables = []
+    for word, _ in words:
+        syllables += get_syllables(word)
+    definitions = [d for _, d in words]
     data = {
-        "words": words,
+        "words": [len(w) for w, d in words],
         "syllables": syllables,
         "definitions": definitions
     }
@@ -26,10 +30,3 @@ def is_correct_answer(id, word_number, word):
         "is_correct": True
     }
     return data
-
-@app.route("/api/random_words", methods=["GET"])
-def get_words():
-    n = 2
-    words = get_random_words(n)
-    words_list = [{'word': row['word'], 'definition': row['definition']} for row in words]
-    return jsonify(words_list)
