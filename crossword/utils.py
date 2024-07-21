@@ -3,7 +3,7 @@ from pyphen import Pyphen
 
 
 def get_words_number(n: int, var: int):
-    number = n + int(var * random())
+    number = n + int((var + 1) * random())
     if number > 0:
         return number
     return 1

@@ -17,8 +17,8 @@ def get_data():
         syllables += get_syllables(word)
     definitions = [d for _, d in words]
     data = {
-        "words": [len(w) for w, d in words],
-        "syllables": syllables,
+        "words": [len(w) for w, _ in words],
+        "syllables": sorted(syllables),
         "definitions": definitions
     }
     return jsonify(data)
