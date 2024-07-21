@@ -1,8 +1,14 @@
-import re
+from random import random
+from pyphen import Pyphen
 
 
-def split_word_es(word: str):
-    word = re.sub(r'([aeiouáéíóúü])([bdfgklmnprstvwxy])', r'\1-\2', word)
-    word = re.sub(r'([bdfgklmnprstvwxy])([aeiouáéíóúü])', r'\1-\2', word)
-    word = re.sub(r'([aeiouáéíóúü])([aeiouáéíóúü])', r'\1-\2', word)
-    return word
+def get_words_number(n: int, var: int):
+    number = n + int(var * random())
+    if number > 0:
+        return number
+    return 1
+
+def get_syllables(word: str):
+    pyphen = Pyphen(lang="es")
+    split_word = pyphen.inserted(word, hyphen="-")
+    return split_word.split("-")
