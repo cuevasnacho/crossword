@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans';
     background-color: #f0f0f0;
 }
 
@@ -8,6 +8,7 @@ body {
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
+    border: #888 solid 1px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -15,33 +16,32 @@ body {
 .content {
     display: flex;
     flex-wrap: wrap;
-    background-color: aqua;
+    border: #888 solid 1px;
 }
 
 .tableContainer {
-    background-color: yellow;
     display: flex;
     flex-direction: column;
     margin: 15px;
+    min-width: 250px;
     max-width: 300px;
 }
 
 .crossword {
-    background-color: red;
 }
 
 .syllables {
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    background-color: blue;
 }
 
 .definitions {
-    background-color: red;
     width: 30%;
     min-width: 300px;
+    max-height: 400px;
     padding: 0;
+    overflow-y: scroll;
 }
 
 .wordDiv {
@@ -62,11 +62,13 @@ body {
 }
 
 .markedCell {
-    background-color: rgb(101, 199, 101);
+    background-color: rgb(32, 255, 32);
 }
 
 h1 {
     color: #333;
+    font-size: 50px;
+    padding: 20px;
 }
 
 h2 {
