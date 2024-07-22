@@ -10,7 +10,7 @@ def index():
 
 @app.route("/api/get_game")
 def get_data():
-    n = get_words_number(n=1, var=1)    # raise when more words are added
+    n = get_words_number(n=12, var=2)
     words = get_random_words(n)
     syllables = []
     for word, _ in words:

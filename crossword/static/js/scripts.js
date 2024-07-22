@@ -24,6 +24,7 @@ function makeWordDiv(data, number) {
     wordDiv.classList.add("wordDiv");
     
     let wordNumber = document.createElement("div");
+    wordNumber.style.width = "20px";
     wordNumber.textContent = `${number+1}`;
     wordDiv.appendChild(wordNumber);
     for (let j = 0; j < data; j++) {
@@ -49,6 +50,7 @@ function makeLetterCell(wordDiv) {
     letterCell.type = "text";
     letterCell.style.width = "20px";
     letterCell.style.height = "20px";
+    letterCell.style.padding = "0";
     letterCell.maxLength = 1;
     addAnswerCheck(letterCell, wordDiv);
     return letterCell;
